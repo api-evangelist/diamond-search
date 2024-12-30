@@ -1,0 +1,79 @@
+openapi: 3.1.0
+info:
+  title: Lab Grown Diamond Feed API
+  description: >
+    This API allows you to download a zipped CSV file containing full details of
+    lab-grown diamond listings available for onsite feeds from IDEX. Access to
+    this service requires an active subscription and valid API credentials.
+  version: 1.0.0
+servers:
+  - url: https://api.idexonline.com/onsite/api
+paths:
+  /labgrownfullfile:
+    post:
+      summary: Download Complete Lab Grown File
+      description: >
+        Fetch a zipped CSV file containing lab-grown diamond data based on
+        specified parameters.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - authentication_details
+                - parameters
+              properties:
+                authentication_details:
+                  type: object
+                  required:
+                    - api_key
+                    - api_secret
+                  properties:
+                    api_key:
+                      type: string
+                      example: HNNSSA1223311
+                    api_secret:
+                      type: string
+                      example: DDccdaaedf123
+                parameters:
+                  type: object
+                  required:
+                    - data_format
+                  properties:
+                    data_format:
+                      type: string
+                      example: format_lg_20221130
+      responses:
+        '200':
+          description: Zipped CSV file successfully retrieved.
+          content:
+            application/zip:
+              schema:
+                type: string
+                format: binary
+        '500':
+          description: Error occurred during processing.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result_info:
+                    type: object
+                    properties:
+                      response_code:
+                        type: integer
+                        example: 32110
+                      response_description:
+                        type: string
+                        example: A description of the exception.
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+security:
+  - ApiKeyAuth: []
