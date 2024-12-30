@@ -10,6 +10,8 @@ apis:
     properties:
       - url: https://api.idexonline.com/Onsite/FullFeed
         type: Documentation
+      - type: OpenAPI
+        url: properties/idex-onsite-full-feed-api-openapi.yml
     description: >-
       In this natural diamond feed API you will send an HTTP request with the
       requested identifiers in JSON, and you will get the full details of
