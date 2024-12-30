@@ -1,0 +1,99 @@
+openapi: 3.1.0
+info:
+  title: IDEX Data API - Report 3
+  description: API for retrieving data report 3 in CSV format.
+  version: 1.0.0
+servers:
+  - url: https://api.idexonline.com/idexdataapi/api
+paths:
+  /getreport3:
+    post:
+      summary: Retrieve Report 3 Data
+      description: Sends a request to retrieve a zipped CSV report for a specified date.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - authentication_details
+                - parameters
+              properties:
+                authentication_details:
+                  type: object
+                  required:
+                    - api_key
+                    - api_secret
+                  properties:
+                    api_key:
+                      type: string
+                      example: HNNSSA1223311
+                    api_secret:
+                      type: string
+                      example: DDccdaaedf123
+                parameters:
+                  type: object
+                  required:
+                    - report_date
+                  properties:
+                    report_date:
+                      type: string
+                      format: date
+                      example: '2021-07-24'
+      responses:
+        '200':
+          description: Zipped CSV file containing the requested report data.
+          content:
+            application/zip:
+              schema:
+                type: string
+                format: binary
+        '400':
+          description: Invalid request or missing required fields.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: integer
+                    example: 3112
+                  error_message:
+                    type: string
+                    example: Missing required fields
+        '401':
+          description: Authentication failed.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: integer
+                    example: 2001
+                  error_message:
+                    type: string
+                    example: Missing authentication section in JSON
+        '404':
+          description: Report not available.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error_code:
+                    type: integer
+                    example: 3114
+                  error_message:
+                    type: string
+                    example: Report not available
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        error_code:
+          type: integer
+        error_message:
+          type: string
