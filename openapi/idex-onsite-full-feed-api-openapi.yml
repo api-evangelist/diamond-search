@@ -1,0 +1,91 @@
+openapi: 3.1.0
+info:
+  title: IDEX Onsite Full Feed API
+  version: 1.0.0
+  description: >-
+    This API provides full details of pre-filtered diamonds in the requested
+    format. It is available as an add-on for IDEX trading platform subscribers.
+servers:
+  - url: https://api.idexonline.com/onsite/api
+paths:
+  /fullfeed:
+    post:
+      summary: Retrieve Full Feed of Diamonds
+      description: >-
+        Fetches a file with full details of matching pre-filtered diamonds in
+        the requested format.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                authentication_details:
+                  type: object
+                  properties:
+                    api_key:
+                      type: string
+                      example: HNNSSA1223311
+                    api_secret:
+                      type: string
+                      example: DDccdaaedf123
+                  required:
+                    - api_key
+                    - api_secret
+                parameters:
+                  type: object
+                  properties:
+                    file_format:
+                      type: string
+                      example: csv
+                      enum:
+                        - csv
+                    data_format:
+                      type: string
+                      example: format_20220530_extended
+                      enum:
+                        - format_20220525_basis
+                        - format_20220530_extended
+                        - format_20221026_extended
+                        - format_20230628_extended
+                    create_zip_file:
+                      type: boolean
+                      example: true
+                      default: true
+                  required:
+                    - file_format
+                    - data_format
+              required:
+                - authentication_details
+                - parameters
+      responses:
+        '200':
+          description: Successful response with file download or JSON data.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  file:
+                    type: string
+                    description: File content or download URL.
+        '500':
+          description: Error occurred during processing.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  result_info:
+                    type: object
+                    properties:
+                      response_code:
+                        type: integer
+                        example: 32110
+                      response_description:
+                        type: string
+                        example: A description of the exception.
+                    required:
+                      - response_code
+                      - response_description
