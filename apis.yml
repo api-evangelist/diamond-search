@@ -28,6 +28,8 @@ apis:
     properties:
       - url: https://api.idexonline.com/Onsite/LabGrownFullFile
         type: Documentation
+      - type: OpenAPI
+        url: properties/idex-lab-grown-file-api-openapi.yml
     description: >-
       In this lab grown diamond feed API you will send an HTTP request with the
       requested identifiers in JSON, and you will get the full details of all
