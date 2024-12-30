@@ -1,4 +1,4 @@
-executed: '2024-12-30T01:46:50.421Z'
+executed: '2024-12-30T13:41:15.439Z'
 results:
   - code: apis-json-specification-aid-info
     message: There is an aid.
@@ -75,7 +75,7 @@ results:
         character: 9
       end:
         line: 4
-        character: 44
+        character: 49
   - code: apis-json-apis-name-info
     message: Has a Name
     path:
@@ -89,7 +89,7 @@ results:
         character: 10
       end:
         line: 5
-        character: 30
+        character: 35
   - code: apis-json-apis-tags-info
     message: API Have a Tags Object
     path:
@@ -218,7 +218,7 @@ results:
         character: 9
       end:
         line: 19
-        character: 42
+        character: 47
   - code: apis-json-apis-name-info
     message: Has a Name
     path:
@@ -232,7 +232,7 @@ results:
         character: 10
       end:
         line: 20
-        character: 28
+        character: 33
   - code: apis-json-apis-tags-info
     message: API Have a Tags Object
     path:
@@ -376,7 +376,7 @@ results:
         character: 9
       end:
         line: 36
-        character: 39
+        character: 44
   - code: apis-json-apis-name-info
     message: Has a Name
     path:
@@ -390,7 +390,7 @@ results:
         character: 10
       end:
         line: 37
-        character: 25
+        character: 30
   - code: apis-json-apis-tags-info
     message: API Have a Tags Object
     path:
