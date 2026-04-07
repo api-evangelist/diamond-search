@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: Lab Grown Diamond Feed API
+  title: Diamond Search Lab Grown Diamond Feed API
   description: >
     This API allows you to download a zipped CSV file containing full details of
     lab-grown diamond listings available for onsite feeds from IDEX. Access to
@@ -11,7 +11,7 @@ servers:
 paths:
   /labgrownfullfile:
     post:
-      summary: Download Complete Lab Grown File
+      summary: Diamond Search Download Complete Lab Grown File
       description: >
         Fetch a zipped CSV file containing lab-grown diamond data based on
         specified parameters.

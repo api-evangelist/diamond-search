@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: IDEX Onsite Full Feed API
+  title: Diamond Search IDEX Onsite Full Feed API
   version: 1.0.0
   description: >-
     This API provides full details of pre-filtered diamonds in the requested
@@ -10,7 +10,7 @@ servers:
 paths:
   /fullfeed:
     post:
-      summary: Retrieve Full Feed of Diamonds
+      summary: Diamond Search Retrieve Full Feed of Diamonds
       description: >-
         Fetches a file with full details of matching pre-filtered diamonds in
         the requested format.
