@@ -88,6 +88,8 @@ paths:
                   error_message:
                     type: string
                     example: Report not available
+      tags:
+        - Getreport3
 components:
   schemas:
     ErrorResponse:
@@ -97,3 +99,5 @@ components:
           type: integer
         error_message:
           type: string
+tags:
+  - name: Getreport3

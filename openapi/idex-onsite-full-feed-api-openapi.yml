@@ -89,3 +89,7 @@ paths:
                     required:
                       - response_code
                       - response_description
+      tags:
+        - Fullfeed
+tags:
+  - name: Fullfeed

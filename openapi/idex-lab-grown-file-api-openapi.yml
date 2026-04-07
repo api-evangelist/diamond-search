@@ -69,6 +69,8 @@ paths:
                       response_description:
                         type: string
                         example: A description of the exception.
+      tags:
+        - Labgrownfullfile
 components:
   securitySchemes:
     ApiKeyAuth:
@@ -77,3 +79,5 @@ components:
       name: Authorization
 security:
   - ApiKeyAuth: []
+tags:
+  - name: Labgrownfullfile
