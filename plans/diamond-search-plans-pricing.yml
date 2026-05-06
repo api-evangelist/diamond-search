@@ -4,164 +4,100 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Diamond Search
 providerId: diamond-search
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - Diamonds
   - Lab Grown
   - Pricing
   - Trading
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+description: IDEX Online sells the Diamond Search platform as annual subscriptions. The Onsite/Data Report
+  APIs are bundled as add-ons available to subscribers; API access is gated by subscription tier rather
+  than metered per request. Pricing is a flat annual fee per subscription level.
+sources:
+  - https://www.idexonline.com/Subscribe
+  - https://www.idexonline.com/OurServices
+  - https://api.idexonline.com/Onsite/FullFeed
+  - https://api.idexonline.com/DiamondPrices
 plans:
-  - id: diamond-search-free
-    name: Free
+  - id: diamond-search-direct
+    name: IDEX Direct
     type: freemium
-    description: Free entry tier for the Diamond Search API surface. Intended for evaluation, prototyping,
-      and low-volume integrations. Real limits and pricing must be reconciled with the provider's published
-      plan documentation.
+    description: Free access to the IDEX Diamond Search front-end. No API entitlement.
     entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
+      - label: Annual subscription
+        name: direct_annual
+        type: subscription
+        metric: year
+        limit: 1
+        timeFrame: year
         geo: global
-        domains:
-          - https://api.idexonline.com/onsite/api
-          - https://api.idexonline.com/Onsite
-          - https://api.idexonline.com/IdexDataApi
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://api.idexonline.com/onsite/api
-          - https://api.idexonline.com/Onsite
-          - https://api.idexonline.com/IdexDataApi
         unit: 1
         price: '0.00'
         userMultiplied: false
     elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: IDEX Onsite Full Feed API
-      - name: IDEX Lab Grown File API
-      - name: IDEX Data Report API
+      - name: Diamond Search front-end
+      - name: Market data browsing
+  - id: diamond-search-premium
+    name: IDEX Premium
+    type: subscription
+    description: Annual subscription to the IDEX trading network — diamond search, bidding, and buying
+      online directly from suppliers. API access available as an add-on.
+    entries:
+      - label: Annual subscription
+        name: premium_annual
+        type: subscription
+        metric: year
+        limit: 1
+        timeFrame: year
+        geo: global
+        unit: 1
+        price: '500.00'
+        userMultiplied: false
+    elements:
+      - name: Trading network access
+      - name: Diamond search, bidding, buying
+      - name: API add-on availability (subject to permissions)
   - id: diamond-search-pro
-    name: Professional
-    type: paid
-    description: Production tier for Diamond Search. Provides higher quotas, priority support, and access
-      to the broader API portfolio. Pricing placeholder; align with the provider's pricing page.
+    name: IDEX Pro
+    type: subscription
+    description: All Premium features plus inventory upload.
     entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
+      - label: Annual subscription
+        name: pro_annual
+        type: subscription
+        metric: year
+        limit: 1
+        timeFrame: year
         geo: global
-        domains:
-          - https://api.idexonline.com/onsite/api
-          - https://api.idexonline.com/Onsite
-          - https://api.idexonline.com/IdexDataApi
         unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://api.idexonline.com/onsite/api
-          - https://api.idexonline.com/Onsite
-          - https://api.idexonline.com/IdexDataApi
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
-        type: metered
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: global
-        domains:
-          - https://api.idexonline.com/onsite/api
-          - https://api.idexonline.com/Onsite
-          - https://api.idexonline.com/IdexDataApi
-        unit: 1000
-        price: TBD
+        price: '840.00'
         userMultiplied: false
     elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: IDEX Onsite Full Feed API
-      - name: IDEX Lab Grown File API
-      - name: IDEX Data Report API
-  - id: diamond-search-enterprise
-    name: Enterprise
-    type: enterprise
-    description: Custom-negotiated tier for Diamond Search. Includes dedicated capacity, contractual SLAs,
-      security review, data residency options, and named technical account management.
+      - name: All Premium features
+      - name: Inventory upload
+      - name: API add-on availability
+  - id: diamond-search-onsite
+    name: IDEX Onsite
+    type: subscription
+    description: Annual subscription that supports running an integrated diamond storefront — choose diamonds,
+      define markups, and sell online. Includes the Onsite Full Feed and Lab Grown file APIs.
     entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: configurable
-        domains:
-          - https://api.idexonline.com/onsite/api
-          - https://api.idexonline.com/Onsite
-          - https://api.idexonline.com/IdexDataApi
+      - label: Annual subscription
+        name: onsite_annual
+        type: subscription
+        metric: year
+        limit: 1
+        timeFrame: year
+        geo: global
         unit: 1
-        price: custom
-        userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains:
-          - https://api.idexonline.com/onsite/api
-          - https://api.idexonline.com/Onsite
-          - https://api.idexonline.com/IdexDataApi
-        unit: 1
-        price: custom
+        price: '1250.00'
         userMultiplied: false
     elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
       - name: IDEX Onsite Full Feed API
       - name: IDEX Lab Grown File API
-      - name: IDEX Data Report API
+      - name: Markup configuration and storefront integration
+      - name: CSV / XML / JSON feed formats
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

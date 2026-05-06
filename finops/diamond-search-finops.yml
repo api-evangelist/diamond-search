@@ -1,5 +1,6 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
@@ -8,137 +9,67 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: Diamond Search
 providerId: diamond-search
-publisherName: Diamond Search
-serviceCategory: API
+publisherName: IDEX Online Ltd.
+serviceCategory: Market Data / Diamond Trading
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - Diamonds
   - Lab Grown
   - Pricing
   - Trading
   - FinOps
-  - Cost Management
   - FOCUS
-description: FinOps framework definition for the Diamond Search API surface. Provides a FOCUS-aligned
-  mapping for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
-principles:
-  - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
-  - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
-  - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
-  - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+description: FOCUS-aligned FinOps shape for IDEX Online Diamond Search. Billing is annual subscription
+  per IDEX tier (Direct / Premium / Pro / Onsite); API access is bundled with the subscription rather
+  than metered per request.
+sources:
+  - https://www.idexonline.com/Subscribe
+  - https://www.idexonline.com/OurServices
 billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
+  pricingCategory: Subscription
+  billingFrequency: Annual
   billingCurrency: USD
   chargeCategories:
-    - Usage
     - Purchase
     - Tax
-    - Credit
-    - Adjustment
-  chargeFrequency: Recurring
+    - Refund
 focusColumns:
-  ServiceName: Diamond Search
-  ServiceCategory: Developer Tools / API
-  ProviderName: Diamond Search
-  PublisherName: Diamond Search
-  InvoiceIssuerName: Diamond Search
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  ServiceName: IDEX Diamond Search
+  ServiceCategory: Market Data / Diamond Trading
+  ProviderName: IDEX Online
+  PublisherName: IDEX Online Ltd.
+  InvoiceIssuerName: IDEX Online Ltd.
   BillingCurrency: USD
-  ChargeCategory: Usage
+  ChargeCategory: Purchase
 meters:
-  - name: api_requests
-    description: Count of billable API requests
+  - name: subscription_seats
+    description: Active IDEX subscriptions by tier
+    unit: seat
+    aggregation: count
+    dimensions:
+      - tier
+  - name: feed_pulls
+    description: Feed pulls / API calls by subscriber (informational, not invoiced)
     unit: request
     aggregation: sum
     dimensions:
       - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
-    aggregation: sum
-    dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
-apis:
-  - name: IDEX Onsite Full Feed API
-    baseURL: https://api.idexonline.com/onsite/api
-    tags:
-      - Diamonds
-      - Feed
-    serviceName: IDEX Onsite Full Feed API
-    serviceCategory: API
-  - name: IDEX Lab Grown File API
-    baseURL: https://api.idexonline.com/Onsite
-    tags:
-      - Diamonds
-      - Lab Grown
-    serviceName: IDEX Lab Grown File API
-    serviceCategory: API
-  - name: IDEX Data Report API
-    baseURL: https://api.idexonline.com/IdexDataApi
-    tags:
-      - Diamonds
-      - Reports
-    serviceName: IDEX Data Report API
-    serviceCategory: API
-unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+      - subscription_tier
+principles:
+  - name: Visibility
+    description: Reconcile annual IDEX invoices against the contracted tier and seat count; the API itself
+      does not produce a usage invoice.
+  - name: Allocation
+    description: Allocate IDEX subscription cost to the trading desk or storefront product that consumes
+      the Onsite/Data Report feeds.
+  - name: Optimization
+    description: Choose the lowest tier that includes required entitlements (Onsite vs. Pro vs. Premium);
+      cache feed snapshots to reduce repeated pulls and shared infrastructure load.
+  - name: Accountability
+    description: Subscription owner is responsible for renewal terms and ensuring API integrations stay
+      within fair-use polling cadence.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
