@@ -7,7 +7,7 @@ description: >-
   IDEX Onsite and Data Report APIs deliver natural diamond, lab grown diamond, and
   market data feeds to subscribers of the IDEX trading platform.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-type: Contract
+kind: contract
 position: Consuming
 access: 3rd-Party
 tags:
