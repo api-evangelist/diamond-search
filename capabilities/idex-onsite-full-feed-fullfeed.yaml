@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Diamond Search IDEX Onsite Full Feed API — Fullfeed
+  description: 'Diamond Search IDEX Onsite Full Feed API — Fullfeed. 1 operations. Lead operation: Diamond Search Retrieve
+    Full Feed of Diamonds. Self-contained Naftiko capability covering one Diamond Search business surface.'
+  tags:
+  - Diamond Search
+  - Fullfeed
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DIAMOND_SEARCH_API_KEY: DIAMOND_SEARCH_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: idex-onsite-full-feed-fullfeed
+    baseUri: https://api.idexonline.com/onsite/api
+    description: Diamond Search IDEX Onsite Full Feed API — Fullfeed business capability. Self-contained, no shared references.
+    resources:
+    - name: fullfeed
+      path: /fullfeed
+      operations:
+      - name: post
+        method: POST
+        description: Diamond Search Retrieve Full Feed of Diamonds
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: idex-onsite-full-feed-fullfeed-rest
+    port: 8080
+    description: REST adapter for Diamond Search IDEX Onsite Full Feed API — Fullfeed. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/fullfeed
+      name: fullfeed
+      description: REST surface for fullfeed.
+      operations:
+      - method: POST
+        name: post
+        description: Diamond Search Retrieve Full Feed of Diamonds
+        call: idex-onsite-full-feed-fullfeed.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: idex-onsite-full-feed-fullfeed-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Diamond Search IDEX Onsite Full Feed API — Fullfeed. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: diamond-search-retrieve-full-feed
+      description: Diamond Search Retrieve Full Feed of Diamonds
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: idex-onsite-full-feed-fullfeed.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

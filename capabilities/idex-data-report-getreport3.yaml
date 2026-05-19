@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Diamond Search IDEX Data API - Report 3 — Getreport3
+  description: 'Diamond Search IDEX Data API - Report 3 — Getreport3. 1 operations. Lead operation: Diamond Search Retrieve
+    Report 3 Data. Self-contained Naftiko capability covering one Diamond Search business surface.'
+  tags:
+  - Diamond Search
+  - Getreport3
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    DIAMOND_SEARCH_API_KEY: DIAMOND_SEARCH_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: idex-data-report-getreport3
+    baseUri: https://api.idexonline.com/idexdataapi/api
+    description: Diamond Search IDEX Data API - Report 3 — Getreport3 business capability. Self-contained, no shared references.
+    resources:
+    - name: getreport3
+      path: /getreport3
+      operations:
+      - name: post
+        method: POST
+        description: Diamond Search Retrieve Report 3 Data
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: idex-data-report-getreport3-rest
+    port: 8080
+    description: REST adapter for Diamond Search IDEX Data API - Report 3 — Getreport3. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/getreport3
+      name: getreport3
+      description: REST surface for getreport3.
+      operations:
+      - method: POST
+        name: post
+        description: Diamond Search Retrieve Report 3 Data
+        call: idex-data-report-getreport3.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: idex-data-report-getreport3-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Diamond Search IDEX Data API - Report 3 — Getreport3. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: diamond-search-retrieve-report-3
+      description: Diamond Search Retrieve Report 3 Data
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: idex-data-report-getreport3.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
