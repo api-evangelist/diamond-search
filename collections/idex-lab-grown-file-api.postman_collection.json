@@ -1,0 +1,199 @@
+{
+  "item": [
+    {
+      "id": "6de64a87-1f2f-4772-b611-894ed541f6de",
+      "name": "Labgrownfullfile",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0d98b282-1261-47ce-af72-ed06810c9809",
+          "name": "Diamond Search Download Complete Lab Grown File",
+          "request": {
+            "name": "Diamond Search Download Complete Lab Grown File",
+            "description": {
+              "content": "Fetch a zipped CSV file containing lab-grown diamond data based on specified parameters.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "labgrownfullfile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/zip"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"authentication_details\": {\n    \"api_key\": \"<string>\",\n    \"api_secret\": \"<string>\"\n  },\n  \"parameters\": {\n    \"data_format\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "25a6785e-1448-4e3b-9283-a639cbe49c92",
+              "name": "Zipped CSV file successfully retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "labgrownfullfile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/zip"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authentication_details\": {\n    \"api_key\": \"HNNSSA1223311\",\n    \"api_secret\": \"DDccdaaedf123\"\n  },\n  \"parameters\": {\n    \"data_format\": \"format_lg_20221130\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/zip"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "253219ba-1fbe-441b-8c8d-b835fa719608",
+              "name": "Error occurred during processing.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "labgrownfullfile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authentication_details\": {\n    \"api_key\": \"HNNSSA1223311\",\n    \"api_secret\": \"DDccdaaedf123\"\n  },\n  \"parameters\": {\n    \"data_format\": \"format_lg_20221130\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result_info\": {\n    \"response_code\": 32110,\n    \"response_description\": \"A description of the exception.\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.idexonline.com/onsite/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e4bc621c-479e-4811-8614-2d67f02cf6c2",
+    "name": "Diamond Search Lab Grown Diamond Feed API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This API allows you to download a zipped CSV file containing full details of lab-grown diamond listings available for onsite feeds from IDEX. Access to this service requires an active subscription and valid API credentials.\n",
+      "type": "text/plain"
+    }
+  }
+}

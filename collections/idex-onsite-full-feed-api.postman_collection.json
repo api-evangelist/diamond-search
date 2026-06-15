@@ -1,0 +1,166 @@
+{
+  "item": [
+    {
+      "id": "60c08c86-20a4-4c93-9afe-fbc1c02bf874",
+      "name": "Fullfeed",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "946d1693-e2ec-4daf-94fc-adbebe2483ae",
+          "name": "Diamond Search Retrieve Full Feed of Diamonds",
+          "request": {
+            "name": "Diamond Search Retrieve Full Feed of Diamonds",
+            "description": {
+              "content": "Fetches a file with full details of matching pre-filtered diamonds in the requested format.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fullfeed"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"authentication_details\": {\n    \"api_key\": \"<string>\",\n    \"api_secret\": \"<string>\"\n  },\n  \"parameters\": {\n    \"file_format\": \"<string>\",\n    \"data_format\": \"<string>\",\n    \"create_zip_file\": true\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cda15af5-ffff-4377-b1f2-b93bd8a0fb60",
+              "name": "Successful response with file download or JSON data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fullfeed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authentication_details\": {\n    \"api_key\": \"HNNSSA1223311\",\n    \"api_secret\": \"DDccdaaedf123\"\n  },\n  \"parameters\": {\n    \"file_format\": \"csv\",\n    \"data_format\": \"format_20220530_extended\",\n    \"create_zip_file\": true\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"file\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5c885100-0a1c-48ad-ae29-c29d01020fce",
+              "name": "Error occurred during processing.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fullfeed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authentication_details\": {\n    \"api_key\": \"HNNSSA1223311\",\n    \"api_secret\": \"DDccdaaedf123\"\n  },\n  \"parameters\": {\n    \"file_format\": \"csv\",\n    \"data_format\": \"format_20220530_extended\",\n    \"create_zip_file\": true\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result_info\": {\n    \"response_code\": 32110,\n    \"response_description\": \"A description of the exception.\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.idexonline.com/onsite/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2bca5811-f28c-4187-a44e-ea7e8a76c791",
+    "name": "Diamond Search IDEX Onsite Full Feed API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This API provides full details of pre-filtered diamonds in the requested format. It is available as an add-on for IDEX trading platform subscribers.",
+      "type": "text/plain"
+    }
+  }
+}

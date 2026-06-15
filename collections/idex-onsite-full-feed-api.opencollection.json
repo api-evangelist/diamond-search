@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Diamond Search IDEX Onsite Full Feed API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Fullfeed",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Diamond Search Retrieve Full Feed of Diamonds",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.idexonline.com/onsite/api/fullfeed",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Fetches a file with full details of matching pre-filtered diamonds in the requested format."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

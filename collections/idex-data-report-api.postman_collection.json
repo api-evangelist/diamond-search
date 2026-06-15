@@ -1,0 +1,252 @@
+{
+  "item": [
+    {
+      "id": "62e09fe6-bb1f-43ee-95bc-ea2059253dae",
+      "name": "Getreport3",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5bf229cb-06a4-46d8-bc33-fd13e7b2f409",
+          "name": "Diamond Search Retrieve Report 3 Data",
+          "request": {
+            "name": "Diamond Search Retrieve Report 3 Data",
+            "description": {
+              "content": "Sends a request to retrieve a zipped CSV report for a specified date.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "getreport3"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/zip"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"authentication_details\": {\n    \"api_key\": \"<string>\",\n    \"api_secret\": \"<string>\"\n  },\n  \"parameters\": {\n    \"report_date\": \"<date>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d8419ffe-1952-4d80-9d7f-28e42a79b6fd",
+              "name": "Zipped CSV file containing the requested report data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "getreport3"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/zip"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authentication_details\": {\n    \"api_key\": \"HNNSSA1223311\",\n    \"api_secret\": \"DDccdaaedf123\"\n  },\n  \"parameters\": {\n    \"report_date\": \"2021-07-24\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/zip"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b40089a1-930e-4214-bc22-be9b0c2d1b83",
+              "name": "Invalid request or missing required fields.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "getreport3"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authentication_details\": {\n    \"api_key\": \"HNNSSA1223311\",\n    \"api_secret\": \"DDccdaaedf123\"\n  },\n  \"parameters\": {\n    \"report_date\": \"2021-07-24\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_code\": 3112,\n  \"error_message\": \"Missing required fields\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "be69e69a-d42b-4f15-a5df-d5d4217f75aa",
+              "name": "Authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "getreport3"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authentication_details\": {\n    \"api_key\": \"HNNSSA1223311\",\n    \"api_secret\": \"DDccdaaedf123\"\n  },\n  \"parameters\": {\n    \"report_date\": \"2021-07-24\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_code\": 2001,\n  \"error_message\": \"Missing authentication section in JSON\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6271197e-09fd-4519-bb1f-6185f4dbd64f",
+              "name": "Report not available.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "getreport3"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authentication_details\": {\n    \"api_key\": \"HNNSSA1223311\",\n    \"api_secret\": \"DDccdaaedf123\"\n  },\n  \"parameters\": {\n    \"report_date\": \"2021-07-24\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error_code\": 3114,\n  \"error_message\": \"Report not available\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.idexonline.com/idexdataapi/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "09074bb8-2153-4694-84fa-3c3f61e95a6c",
+    "name": "Diamond Search IDEX Data API - Report 3",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for retrieving data report 3 in CSV format.",
+      "type": "text/plain"
+    }
+  }
+}

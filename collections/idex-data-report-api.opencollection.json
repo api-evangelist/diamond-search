@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Diamond Search IDEX Data API - Report 3",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Getreport3",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Diamond Search Retrieve Report 3 Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.idexonline.com/idexdataapi/api/getreport3",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Sends a request to retrieve a zipped CSV report for a specified date."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
