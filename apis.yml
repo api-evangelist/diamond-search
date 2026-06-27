@@ -87,7 +87,7 @@ common:
   - type: Login
     name: IDEX Online Login
     url: https://www.idexonline.com/ns24/auth/login.aspx
-  - type: Sign-Up
+  - type: Signup
     name: IDEX Online Sign-Up
     url: https://www.idexonline.com/register.aspx
   - type: PrivacyPolicy
