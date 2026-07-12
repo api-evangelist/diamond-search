@@ -77,6 +77,10 @@ apis:
       - FN: IDEX Online Support
         email: support@idexonline.com
 common:
+  - type: DomainSecurity
+    url: security/diamond-search-domain-security.yml
+  - type: Authentication
+    url: authentication/diamond-search-authentication.yml
   - type: Newsroom
     name: IDEX Online RSS Feeds
     url: http://www.idexonline.com/rssfeeds
