@@ -1,10 +1,12 @@
 openapi: 3.1.0
 info:
-  title: Diamond Search IDEX Data API - Report 3
+  title: Diamond Search IDEX Data API - Report 3 Fullfeed Getreport3 API
   description: API for retrieving data report 3 in CSV format.
   version: 1.0.0
 servers:
-  - url: https://api.idexonline.com/idexdataapi/api
+- url: https://api.idexonline.com/idexdataapi/api
+tags:
+- name: Getreport3
 paths:
   /getreport3:
     post:
@@ -17,14 +19,14 @@ paths:
             schema:
               type: object
               required:
-                - authentication_details
-                - parameters
+              - authentication_details
+              - parameters
               properties:
                 authentication_details:
                   type: object
                   required:
-                    - api_key
-                    - api_secret
+                  - api_key
+                  - api_secret
                   properties:
                     api_key:
                       type: string
@@ -35,7 +37,7 @@ paths:
                 parameters:
                   type: object
                   required:
-                    - report_date
+                  - report_date
                   properties:
                     report_date:
                       type: string
@@ -89,15 +91,4 @@ paths:
                     type: string
                     example: Report not available
       tags:
-        - Getreport3
-components:
-  schemas:
-    ErrorResponse:
-      type: object
-      properties:
-        error_code:
-          type: integer
-        error_message:
-          type: string
-tags:
-  - name: Getreport3
+      - Getreport3

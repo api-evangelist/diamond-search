@@ -1,20 +1,19 @@
 openapi: 3.1.0
 info:
-  title: Diamond Search Lab Grown Diamond Feed API
-  description: >
-    This API allows you to download a zipped CSV file containing full details of
-    lab-grown diamond listings available for onsite feeds from IDEX. Access to
-    this service requires an active subscription and valid API credentials.
+  title: Diamond Search IDEX Data API - Report 3 Fullfeed Labgrownfullfile API
+  description: API for retrieving data report 3 in CSV format.
   version: 1.0.0
 servers:
-  - url: https://api.idexonline.com/onsite/api
+- url: https://api.idexonline.com/idexdataapi/api
+tags:
+- name: Labgrownfullfile
 paths:
   /labgrownfullfile:
     post:
       summary: Diamond Search Download Complete Lab Grown File
-      description: >
-        Fetch a zipped CSV file containing lab-grown diamond data based on
-        specified parameters.
+      description: 'Fetch a zipped CSV file containing lab-grown diamond data based on specified parameters.
+
+        '
       requestBody:
         required: true
         content:
@@ -22,14 +21,14 @@ paths:
             schema:
               type: object
               required:
-                - authentication_details
-                - parameters
+              - authentication_details
+              - parameters
               properties:
                 authentication_details:
                   type: object
                   required:
-                    - api_key
-                    - api_secret
+                  - api_key
+                  - api_secret
                   properties:
                     api_key:
                       type: string
@@ -40,7 +39,7 @@ paths:
                 parameters:
                   type: object
                   required:
-                    - data_format
+                  - data_format
                   properties:
                     data_format:
                       type: string
@@ -70,14 +69,4 @@ paths:
                         type: string
                         example: A description of the exception.
       tags:
-        - Labgrownfullfile
-components:
-  securitySchemes:
-    ApiKeyAuth:
-      type: apiKey
-      in: header
-      name: Authorization
-security:
-  - ApiKeyAuth: []
-tags:
-  - name: Labgrownfullfile
+      - Labgrownfullfile

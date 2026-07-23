@@ -1,19 +1,17 @@
 openapi: 3.1.0
 info:
-  title: Diamond Search IDEX Onsite Full Feed API
+  title: Diamond Search IDEX Data API - Report 3 Fullfeed API
+  description: API for retrieving data report 3 in CSV format.
   version: 1.0.0
-  description: >-
-    This API provides full details of pre-filtered diamonds in the requested
-    format. It is available as an add-on for IDEX trading platform subscribers.
 servers:
-  - url: https://api.idexonline.com/onsite/api
+- url: https://api.idexonline.com/idexdataapi/api
+tags:
+- name: Fullfeed
 paths:
   /fullfeed:
     post:
       summary: Diamond Search Retrieve Full Feed of Diamonds
-      description: >-
-        Fetches a file with full details of matching pre-filtered diamonds in
-        the requested format.
+      description: Fetches a file with full details of matching pre-filtered diamonds in the requested format.
       requestBody:
         required: true
         content:
@@ -31,8 +29,8 @@ paths:
                       type: string
                       example: DDccdaaedf123
                   required:
-                    - api_key
-                    - api_secret
+                  - api_key
+                  - api_secret
                 parameters:
                   type: object
                   properties:
@@ -40,25 +38,25 @@ paths:
                       type: string
                       example: csv
                       enum:
-                        - csv
+                      - csv
                     data_format:
                       type: string
                       example: format_20220530_extended
                       enum:
-                        - format_20220525_basis
-                        - format_20220530_extended
-                        - format_20221026_extended
-                        - format_20230628_extended
+                      - format_20220525_basis
+                      - format_20220530_extended
+                      - format_20221026_extended
+                      - format_20230628_extended
                     create_zip_file:
                       type: boolean
                       example: true
                       default: true
                   required:
-                    - file_format
-                    - data_format
+                  - file_format
+                  - data_format
               required:
-                - authentication_details
-                - parameters
+              - authentication_details
+              - parameters
       responses:
         '200':
           description: Successful response with file download or JSON data.
@@ -87,9 +85,7 @@ paths:
                         type: string
                         example: A description of the exception.
                     required:
-                      - response_code
-                      - response_description
+                    - response_code
+                    - response_description
       tags:
-        - Fullfeed
-tags:
-  - name: Fullfeed
+      - Fullfeed
