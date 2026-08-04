@@ -1,0 +1,18 @@
+{
+  "provider": "diamond-search",
+  "sources": [
+    "diamond-search-fullfeed-api-openapi.yml",
+    "diamond-search-getreport3-api-openapi.yml",
+    "diamond-search-labgrownfullfile-api-openapi.yml"
+  ],
+  "outputs": [
+    "diamond-search-fullfeed-api-openapi.yml",
+    "diamond-search-getreport3-api-openapi.yml",
+    "diamond-search-labgrownfullfile-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
