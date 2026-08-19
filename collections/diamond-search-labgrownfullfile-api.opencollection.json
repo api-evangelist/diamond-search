@@ -1,0 +1,33 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Diamond Search IDEX Data API - Report 3 Fullfeed Labgrownfullfile API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Labgrownfullfile",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Diamond Search Download Complete Lab Grown File",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.idexonline.com/idexdataapi/api/labgrownfullfile",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Fetch a zipped CSV file containing lab-grown diamond data based on specified parameters.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,166 @@
+{
+  "item": [
+    {
+      "id": "888f3399-cc35-4a3f-bfab-b04144d87531",
+      "name": "Labgrownfullfile",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2419b03a-0287-4412-acc5-7e02f009ba69",
+          "name": "Diamond Search Download Complete Lab Grown File",
+          "request": {
+            "name": "Diamond Search Download Complete Lab Grown File",
+            "description": {
+              "content": "Fetch a zipped CSV file containing lab-grown diamond data based on specified parameters.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "labgrownfullfile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/zip"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"authentication_details\": {\n    \"api_key\": \"<string>\",\n    \"api_secret\": \"<string>\"\n  },\n  \"parameters\": {\n    \"data_format\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "530c6c8b-1696-4379-bc3d-1b4e37d4640c",
+              "name": "Zipped CSV file successfully retrieved.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "labgrownfullfile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/zip"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authentication_details\": {\n    \"api_key\": \"HNNSSA1223311\",\n    \"api_secret\": \"DDccdaaedf123\"\n  },\n  \"parameters\": {\n    \"data_format\": \"format_lg_20221130\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/zip"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "472679b7-0e18-4622-9e2a-39b8af7f3ada",
+              "name": "Error occurred during processing.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "labgrownfullfile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"authentication_details\": {\n    \"api_key\": \"HNNSSA1223311\",\n    \"api_secret\": \"DDccdaaedf123\"\n  },\n  \"parameters\": {\n    \"data_format\": \"format_lg_20221130\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"result_info\": {\n    \"response_code\": 32110,\n    \"response_description\": \"A description of the exception.\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.idexonline.com/idexdataapi/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4037fb92-0dbf-456b-9791-368021e4cf56",
+    "name": "Diamond Search IDEX Data API - Report 3 Fullfeed Labgrownfullfile API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API for retrieving data report 3 in CSV format.",
+      "type": "text/plain"
+    }
+  }
+}
