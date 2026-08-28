@@ -5,6 +5,18 @@ description: >-
   IDEX Online is the leading polished diamonds trading platform for professionals, providing unbiased, market-driven
   diamond pricing tools, news and research. The IDEX Onsite and Data Report APIs deliver natural diamond, lab grown
   diamond, and market data feeds to subscribers of the IDEX trading platform.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
