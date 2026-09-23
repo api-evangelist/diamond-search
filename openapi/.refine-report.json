@@ -1,18 +1,28 @@
 {
   "provider": "diamond-search",
   "sources": [
-    "diamond-search-fullfeed-api-openapi.yml",
-    "diamond-search-getreport3-api-openapi.yml",
-    "diamond-search-labgrownfullfile-api-openapi.yml"
+    "_original/idex-data-report-api-openapi.yml",
+    "_original/idex-lab-grown-file-api-openapi.yml",
+    "_original/idex-onsite-full-feed-api-openapi.yml"
   ],
   "outputs": [
-    "diamond-search-fullfeed-api-openapi.yml",
     "diamond-search-getreport3-api-openapi.yml",
-    "diamond-search-labgrownfullfile-api-openapi.yml"
+    "diamond-search-labgrownfullfile-api-openapi.yml",
+    "diamond-search-fullfeed-api-openapi.yml"
   ],
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (3 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "idex-data-report-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "idex-lab-grown-file-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "idex-onsite-full-feed-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "diamond-search-fullfeed-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "diamond-search-getreport3-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "diamond-search-labgrownfullfile-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

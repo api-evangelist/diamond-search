@@ -1,19 +1,19 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Diamond Search IDEX Data API - Report 3 Fullfeed Labgrownfullfile API
-  description: API for retrieving data report 3 in CSV format.
+  title: Diamond Search Lab Grown Diamond Feed Labgrownfullfile API
+  description: This API allows you to download a zipped CSV file containing full details of lab-grown diamond listings available for onsite feeds from IDEX. Access to this service requires an active subscription and valid API credentials.
   version: 1.0.0
 servers:
-- url: https://api.idexonline.com/idexdataapi/api
+- url: https://api.idexonline.com/onsite/api
+security:
+- ApiKeyAuth: []
 tags:
 - name: Labgrownfullfile
 paths:
   /labgrownfullfile:
     post:
       summary: Diamond Search Download Complete Lab Grown File
-      description: 'Fetch a zipped CSV file containing lab-grown diamond data based on specified parameters.
-
-        '
+      description: Fetch a zipped CSV file containing lab-grown diamond data based on specified parameters.
       requestBody:
         required: true
         content:
@@ -70,3 +70,11 @@ paths:
                         example: A description of the exception.
       tags:
       - Labgrownfullfile
+      operationId: postLabgrownfullfile
+      x-operation-id-source: derived
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
