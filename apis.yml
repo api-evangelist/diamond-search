@@ -93,6 +93,12 @@ apis:
   - type: Documentation
     url: https://api.idexonline.com/IdexDataApi/Report3
 common:
+  - type: Plans
+    url: plans/diamond-search-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/diamond-search-rate-limits.yml
+  - type: FinOps
+    url: finops/diamond-search-finops.yml
   - url: https://www.idexonline.com/newsroom
     type: Blog
   - type: Website
