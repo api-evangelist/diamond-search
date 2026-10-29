@@ -1,4 +1,4 @@
-# Diamond Search (diamond-search)
+# Diamond Search
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,93 +66,122 @@
 
 IDEX Online is the leading polished diamonds trading platform for professionals, providing unbiased, market-driven diamond pricing tools, news and research. The IDEX Onsite and Data Report APIs deliver natural diamond, lab grown diamond, and market data feeds to subscribers of the IDEX trading platform.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/diamond-search/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/diamond-search/refs/heads/main/apis.yml)
+**Areas:** Diamonds · Lab Grown · Pricing · Trading
 
-## Scope
+## Diamond Search on APIs.io
 
-- **Position:** Consuming
-- **Access:** 3rd-Party
+Everything profiled for Diamond Search is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/diamond-search/](https://apis.io/providers/diamond-search/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- Diamonds
-- Lab Grown
-- Pricing
-- Trading
+- [Diamond Search Fullfeed API](https://apis.io/apis/diamond-search/diamond-search-fullfeed-api/) — The Fullfeed API from Diamond Search — 1 operation(s) for fullfeed.
+- [Diamond Search Getreport3 API](https://apis.io/apis/diamond-search/diamond-search-getreport3-api/) — The Getreport3 API from Diamond Search — 1 operation(s) for getreport3.
+- [Diamond Search Labgrownfullfile API](https://apis.io/apis/diamond-search/diamond-search-labgrownfullfile-api/) — The Labgrownfullfile API from Diamond Search — 1 operation(s) for labgrownfullfile.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-11-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### IDEX Onsite Full Feed API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-In this natural diamond feed API you will send an HTTP request with the requested identifiers in JSON, and you will get the full details of matching pre-filtered diamonds back in the requested format. This service is available as an add-on to all subscribers of the IDEX trading platform, however, results may vary based on your subscription type and permissions. Filters and markups can be set on IDEX.
+- [Diamond Search Agentic Access](https://apis.io/agentic-access/diamond-search/diamond-search-agentic-access/)
 
-- **Human URL:** [https://api.idexonline.com/Onsite/FullFeed](https://api.idexonline.com/Onsite/FullFeed)
-- **Base URL:** `https://api.idexonline.com/onsite/api`
+#### Collections (6)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Diamonds
-- Feed
+- [Diamond Search IDEX Data API - Report 3 Fullfeed API](https://apis.io/collections/diamond-search/open-diamond-search-fullfeed-api/)
+- [Diamond Search IDEX Data API - Report 3 Fullfeed Getreport3 API](https://apis.io/collections/diamond-search/open-diamond-search-getreport3-api/)
+- [Diamond Search IDEX Data API - Report 3 Fullfeed Labgrownfullfile API](https://apis.io/collections/diamond-search/open-diamond-search-labgrownfullfile-api/)
+- [Diamond Search IDEX Data API - Report 3](https://apis.io/collections/diamond-search/open-idex-data-report-api/)
+- [Diamond Search Lab Grown Diamond Feed API](https://apis.io/collections/diamond-search/open-idex-lab-grown-file-api/)
+- [Diamond Search IDEX Onsite Full Feed API](https://apis.io/collections/diamond-search/open-idex-onsite-full-feed-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://api.idexonline.com/Onsite/FullFeed)
-- [OpenAPI](openapi/idex-onsite-full-feed-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/idex-onsite-full-feed-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/idex-onsite-full-feed-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### IDEX Lab Grown File API
+- [Diamond Search Authentication](https://apis.io/security/diamond-search/diamond-search-authentication/)
+- [Diamond Search Domain Security](https://apis.io/security/diamond-search/diamond-search-domain-security/)
 
-In this lab grown diamond feed API you will send an HTTP request with the requested identifiers in JSON, and you will get the full details of all filtered available diamonds back in a zipped CSV file. This service is available as an add-on to all subscribers of the IDEX trading platform, however, results may vary based on your subscription type and permissions. This feed will return all lab grown diamond listings available for onsite feeds from IDEX.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://api.idexonline.com/Onsite/LabGrownFullFile](https://api.idexonline.com/Onsite/LabGrownFullFile)
-- **Base URL:** `https://api.idexonline.com/Onsite`
+Published plans, tiers and prices.
 
-#### Tags
+- [Diamond Search Plans Pricing](https://apis.io/plans/diamond-search/diamond-search-plans-pricing/)
 
-- Diamonds
-- Lab Grown
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://api.idexonline.com/Onsite/LabGrownFullFile)
-- [OpenAPI](openapi/idex-lab-grown-file-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/idex-lab-grown-file-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/idex-lab-grown-file-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Diamond Search Rate Limits](https://apis.io/rate-limits/diamond-search/diamond-search-rate-limits/)
 
-### IDEX Data Report API
+#### FinOps (1)
 
-In this API you will send an HTTP request with a date for which you want the report. You will get back a zipped CSV file. The file creation process may take a few minutes.
+What the API costs to run, by operation.
 
-- **Human URL:** [https://api.idexonline.com/IdexDataApi/Report3](https://api.idexonline.com/IdexDataApi/Report3)
-- **Base URL:** `https://api.idexonline.com/IdexDataApi`
+- [Diamond Search Finops](https://apis.io/finops/diamond-search/diamond-search-finops/)
 
-#### Tags
+## Where to find this API
 
-- Diamonds
-- Reports
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Properties
+- [Website](https://www.idexonline.com/)
+- [Blog](https://www.idexonline.com/newsroom)
+- [Terms of service](http://www.idexonline.com/Conditions)
+- [Privacy policy](http://www.idexonline.com/Privacy)
 
-- [Documentation](https://api.idexonline.com/IdexDataApi/Report3)
-- [OpenAPI](openapi/idex-data-report-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/idex-data-report-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/idex-data-report-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+## API Evangelist rating
 
-## Common Properties
+**Kin Score 31.8** — thin · rubric 0.24.0 · scored 2026-10-17
 
-- [Newsroom](http://www.idexonline.com/rssfeeds)
-- [Login](https://www.idexonline.com/ns24/auth/login.aspx)
-- [Sign- Up](https://www.idexonline.com/register.aspx)
-- [Privacy Policy](http://www.idexonline.com/Privacy)
-- [Terms of Service](http://www.idexonline.com/Conditions)
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 46.9 |
+| Contract governance | 0.0 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 42.1 |
 
-## Maintainers
+**Agent readiness 22.9** — agent-aware
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 24.1** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/diamond-search/](https://apis.io/providers/diamond-search/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Diamond Search: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/diamond-search/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
